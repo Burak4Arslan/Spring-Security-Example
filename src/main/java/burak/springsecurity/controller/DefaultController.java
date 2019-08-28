@@ -31,4 +31,9 @@ public class DefaultController {
         return "error";
     }
 
+    @GetMapping("/manager")
+    public String managerPage() {
+        return "manager";
+    }
+
 }
