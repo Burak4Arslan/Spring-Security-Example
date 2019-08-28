@@ -22,20 +22,7 @@
 
     <a href="/manager">Manager Page</a>
 
-    <footer>
-        <!-- this is footer -->
-        © 2017 mkyong.com
-        <div th:if="${#httpServletRequest.remoteUser}">
-            Logged In
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Sign Out"/>
-            </form>
-        </div>
-
-        <script type="text/javascript"
-                src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    </footer>
+<div th:replace="fragments/footer :: footer"/>
 
 
 </body>
