@@ -9,6 +9,8 @@
 
 <body>
 
+<div th:replace="fragments/header :: header"/>
+
     <form th:action="@{/login}" method="post">
             <h1>Please Sign In</h1>
 
@@ -30,8 +32,6 @@
                        placeholder="Password" required="true"/>
 
         <input type="submit" value="Sign In"/>
-
-        <a href="/">Home Page</a>
 
     </form>
 

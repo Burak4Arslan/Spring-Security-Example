@@ -10,6 +10,10 @@
 
 <body>
 
+<div th:replace="fragments/header :: header"/>
+
+    <button class="badge badge-primary">Deneme</button>
+
     <h1>Welcome Our Home Page</h1>
 
     <a href="/user">User Page</a>
@@ -17,6 +21,21 @@
     <a href="/admin">Admin Page</a>
 
     <a href="/manager">Manager Page</a>
+
+    <footer>
+        <!-- this is footer -->
+        © 2017 mkyong.com
+        <div th:if="${#httpServletRequest.remoteUser}">
+            Logged In
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
+
+        <script type="text/javascript"
+                src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </footer>
 
 
 </body>
