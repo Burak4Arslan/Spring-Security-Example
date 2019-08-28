@@ -26,4 +26,9 @@ public class DefaultController {
         return "login";
     }
 
+    @GetMapping("/error")
+    public String errorPage() {
+        return "error";
+    }
+
 }
