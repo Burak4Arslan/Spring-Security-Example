@@ -17,20 +17,20 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers("/user").hasAnyRole("USER")
-                .antMatchers("/admin").hasAnyRole("ADMIN")
-                .antMatchers("/manager").hasAnyRole("MANAGER")
-                .anyRequest().authenticated()
+                    .antMatchers("/").permitAll()
+                    .antMatchers("/user").hasAnyRole("USER")
+                    .antMatchers("/admin").hasAnyRole("ADMIN")
+                    .antMatchers("/manager").hasAnyRole("MANAGER")
+                    .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
+                    .formLogin()
+                    .loginPage("/login")
+                    .permitAll()
                 .and()
-                .logout()
-                .permitAll()
+                    .logout()
+                    .permitAll()
                 .and()
-                .exceptionHandling().accessDeniedHandler(accessDeniedHandler);
+                    .exceptionHandling().accessDeniedHandler(accessDeniedHandler);
 
     }
 
