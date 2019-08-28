@@ -6,6 +6,8 @@
 
     <title>User Page</title>
 
+    <div th:replace="fragments/header :: header-css"/>
+
 </head>
 
 <body>
@@ -14,8 +16,10 @@
 
     <h1>Welcome to Manager Page</h1>
 
-    <a href="/admin">Admin Page</a>
-    <a href="/user">User Page</a>
+    <a class="btn btn-danger" href="/admin">Admin Page</a>
+    <a class="btn btn-primary" href="/user">User Page</a>
+
+    <p class="myTexts">A text which only managers can see</p>
 
 <div th:replace="fragments/footer :: footer"/>
 

@@ -6,21 +6,24 @@
 
     <title>Home</title>
 
+    <div th:replace="fragments/header :: header-css"/>
+
+
 </head>
 
 <body>
 
 <div th:replace="fragments/header :: header"/>
 
-    <button class="badge badge-primary">Deneme</button>
-
     <h1>Welcome Our Home Page</h1>
 
-    <a href="/user">User Page</a>
+    <a class="btn btn-primary" href="/user">User Page</a>
 
-    <a href="/admin">Admin Page</a>
+    <a class="btn btn-danger" href="/admin">Admin Page</a>
 
-    <a href="/manager">Manager Page</a>
+    <a class="btn btn-warning" href="/manager">Manager Page</a>
+
+    <p class="myTexts">A text which everyone can see even non-users</p>
 
 <div th:replace="fragments/footer :: footer"/>
 

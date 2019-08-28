@@ -6,8 +6,7 @@
 
     <title>Home</title>
 
-    <link rel="stylesheet" th:href="@{/css/main.css}"
-          href="../css/main.css" />
+    <div th:replace="fragments/header :: header-css"/>
 
 </head>
 
@@ -15,9 +14,9 @@
 
 <div th:replace="fragments/header :: header"/>
 
-    <h1>You are not authorized to see this page [[${#httpServletRequest.remoteUser}]]</h1>
+    <h1 class="alert alert-danger">You are not authorized to see this page [[${#httpServletRequest.remoteUser}]]</h1>
 
-    <a href="/">Turn back to Home Page</a>
+    <a class="btn btn-info" href="/">Turn back to Home Page</a>
 
 <div th:replace="fragments/footer :: footer"/>
 </body>

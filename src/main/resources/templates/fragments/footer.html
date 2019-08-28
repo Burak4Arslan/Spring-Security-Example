@@ -1,19 +1,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
+
+    <div th:replace="fragments/header :: header-css"/>
+
 </head>
 <body>
 <div th:fragment="footer">
 
     <div class="container">
 
+
         <footer>
             <!-- this is footer -->
-            <div th:if="${#httpServletRequest.remoteUser}">
+            <div class="mt-5 d-lg-block" th:if="${#httpServletRequest.remoteUser}">
                 Logged In as <span th:text="${#httpServletRequest.remoteUser}"></span>
                 <form th:action="@{/logout}" method="post">
-                    <input type="submit" value="Sign Out"/>
+                    <input class="btn btn-dark" type="submit" value="Sign Out"/>
                 </form>
+            </div>
+
+            <div th:unless="${#httpServletRequest.remoteUser}">
+                Currently Not Logged In <a class="btn btn-dark" href="/login">Log in</a>
             </div>
 
         </footer>

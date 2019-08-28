@@ -1,7 +1,10 @@
 package burak.springsecurity.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class DefaultController {
@@ -12,7 +15,8 @@ public class DefaultController {
     }
 
     @GetMapping("/user")
-    public String userPage() {
+    public String userPage(Model model, HttpServletRequest httpServletRequest) {
+        model.addAttribute("username",httpServletRequest.getRemoteUser());
         return "user";
     }
 

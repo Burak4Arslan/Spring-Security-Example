@@ -1,5 +1,16 @@
 
-a {
-    text-decoration: none;
-    font-size: 30px;
+/*.myLinks {*/
+
+/*    color: green;*/
+/*    text-decoration: none;*/
+/*    font-size: 30px;*/
+/*    border: 1px solid deepskyblue;*/
+
+/*}*/
+
+.myTexts {
+
+    margin: 30px 0px 30px 0px;
+    color: #ffad5a;
+    font-size: 40px;
 }

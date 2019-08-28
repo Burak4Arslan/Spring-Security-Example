@@ -6,6 +6,8 @@
 
     <title>User Page</title>
 
+    <div th:replace="fragments/header :: header-css"/>
+
 </head>
 
 <body>
@@ -14,12 +16,10 @@
 
     <h1>Welcome to Admin Page</h1>
 
-    <a href="/user">User Page</a>
-    <a href="/manager">Manager Page</a>
+    <a class="btn btn-primary" href="/user">User Page</a>
+    <a  class="btn btn-warning" href="/manager">Manager Page</a>
 
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
+    <pclass="myTexts">A text which only admins can see</p>
 
 <div th:replace="fragments/footer :: footer"/>
 

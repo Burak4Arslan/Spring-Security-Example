@@ -17,10 +17,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-                    .antMatchers("/").permitAll()
-                    .antMatchers("/user").hasAnyRole("USER")
-                    .antMatchers("/admin").hasAnyRole("ADMIN")
-                    .antMatchers("/manager").hasAnyRole("MANAGER")
+                    .antMatchers("/","/home").permitAll()
+                    .antMatchers("/user/**").hasAnyRole("USER")
+                    .antMatchers("/admin/**").hasAnyRole("ADMIN")
+                    .antMatchers("/manager/**").hasAnyRole("MANAGER")
+                    .antMatchers("/**").permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
@@ -38,11 +39,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.inMemoryAuthentication()
-                .withUser("user").password("{noop}password").roles("USER")
+                .withUser("user").password("{noop}p").roles("USER")
                 .and()
-                .withUser("admin").password("{noop}password").roles("ADMIN","USER")
+                .withUser("admin").password("{noop}p").roles("ADMIN","USER")
                 .and()
-                .withUser("manager").password("{noop}password").roles("MANAGER","USER");
+                .withUser("manager").password("{noop}p").roles("MANAGER","USER");
 
     }
 }

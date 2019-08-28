@@ -6,16 +6,20 @@
 
     <title>User Page</title>
 
+    <div th:replace="fragments/header :: header-css"/>
+
 </head>
 
 <body>
 
 <div th:replace="fragments/header :: header"/>
 
-    <h1>Welcome to User Page</h1>
+    <h1>Welcome to User Page <span th:text="${username}"></span> </h1>
 
-    <a href="/admin">Admin Page</a>
-    <a href="/manager">Manager Page</a>
+    <a class="btn btn-danger" href="/admin">Admin Page</a>
+    <a class="btn btn-warning" href="/manager">Manager Page</a>
+
+    <p class="myTexts">A text which only users can see(Admins and Managers are also User)</p>
 
 <div th:replace="fragments/footer :: footer"/>
 
