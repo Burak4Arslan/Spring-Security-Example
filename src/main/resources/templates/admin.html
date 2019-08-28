@@ -4,7 +4,7 @@
 
     <meta charset="UTF-8">
 
-    <title>User Page</title>
+    <title>Admin Page</title>
 
     <div th:replace="fragments/header :: header-css"/>
 
@@ -14,12 +14,16 @@
 
 <div th:replace="fragments/header :: header"/>
 
-    <h1>Welcome to Admin Page</h1>
+<div class="container">
+
+    <h1>Welcome to Admin Page <span class="usernameSpan" th:text="${username}"></span></h1>
 
     <a class="btn btn-primary" href="/user">User Page</a>
     <a  class="btn btn-warning" href="/manager">Manager Page</a>
 
-    <pclass="myTexts">A text which only admins can see</p>
+    <p class="myTexts">A text which only admins can see</p>
+
+</div>
 
 <div th:replace="fragments/footer :: footer"/>
 

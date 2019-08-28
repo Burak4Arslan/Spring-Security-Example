@@ -21,7 +21,8 @@ public class DefaultController {
     }
 
     @GetMapping("/admin")
-    public String adminPage() {
+    public String adminPage(Model model, HttpServletRequest httpServletRequest) {
+        model.addAttribute("username",httpServletRequest.getRemoteUser());
         return "admin";
     }
 
@@ -31,12 +32,13 @@ public class DefaultController {
     }
 
     @GetMapping("/error")
-    public String errorPage() {
+    public String errorPage(Model model,HttpServletRequest httpServletRequest ) {
         return "error";
     }
 
     @GetMapping("/manager")
-    public String managerPage() {
+    public String managerPage(Model model, HttpServletRequest httpServletRequest) {
+        model.addAttribute("username",httpServletRequest.getRemoteUser());
         return "manager";
     }
 

@@ -15,7 +15,12 @@
 
 <div th:replace="fragments/header :: header"/>
 
-    <h1>Welcome Our Home Page</h1>
+<div class="container">
+
+    <h1>Welcome Our Home Page <span class="usernameSpan" th:if="${#httpServletRequest.remoteUser}" th:text="${#httpServletRequest.remoteUser}"></span>
+
+
+    </h1>
 
     <a class="btn btn-primary" href="/user">User Page</a>
 
@@ -24,6 +29,8 @@
     <a class="btn btn-warning" href="/manager">Manager Page</a>
 
     <p class="myTexts">A text which everyone can see even non-users</p>
+
+</div>
 
 <div th:replace="fragments/footer :: footer"/>
 

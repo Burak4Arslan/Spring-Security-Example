@@ -14,12 +14,16 @@
 
 <div th:replace="fragments/header :: header"/>
 
-    <h1>Welcome to User Page <span th:text="${username}"></span> </h1>
+<div class="container">
+
+    <h1>Welcome to User Page <span class="usernameSpan" th:text="${username}"></span> </h1>
 
     <a class="btn btn-danger" href="/admin">Admin Page</a>
     <a class="btn btn-warning" href="/manager">Manager Page</a>
 
     <p class="myTexts">A text which only users can see(Admins and Managers are also User)</p>
+
+</div>
 
 <div th:replace="fragments/footer :: footer"/>
 

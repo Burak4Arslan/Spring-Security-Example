@@ -14,7 +14,7 @@
 
 <div th:replace="fragments/header :: header"/>
 
-    <h1 class="alert alert-danger">You are not authorized to see this page [[${#httpServletRequest.remoteUser}]]</h1>
+<h1 class="alert alert-danger">You are not authorized to see this page <span class="usernameSpan" th:text=" ${#httpServletRequest.remoteUser}"></span></h1>
 
     <a class="btn btn-info" href="/">Turn back to Home Page</a>
 
