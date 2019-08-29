@@ -20,7 +20,7 @@
                 </form>
             </div>
 
-            <div th:unless="${#httpServletRequest.remoteUser}">
+            <div class="mt-5 d-lg-block" th:unless="${#httpServletRequest.remoteUser}">
                 Currently Not Logged In <a class="btn btn-dark" href="/login">Log in</a>
             </div>
 

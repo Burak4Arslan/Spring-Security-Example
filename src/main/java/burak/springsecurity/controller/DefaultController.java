@@ -33,6 +33,7 @@ public class DefaultController {
 
     @GetMapping("/error")
     public String errorPage(Model model,HttpServletRequest httpServletRequest ) {
+        model.addAttribute("username",httpServletRequest.getRemoteUser());
         return "error";
     }
 
