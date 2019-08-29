@@ -6,12 +6,16 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.logout.LogoutHandler;
 
 @Configuration
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private AccessDeniedHandler accessDeniedHandler;
+
+    @Autowired
+    private LogoutHandler logoutHandler;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -30,7 +34,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .and()
                     .logout()
                     .permitAll()
-                    .logoutSuccessUrl("/?logout")
+                    .addLogoutHandler(logoutHandler)
+                    //.logoutSuccessUrl("/?logout")
                 .and()
                     .exceptionHandling().accessDeniedHandler(accessDeniedHandler);
 
